@@ -1,0 +1,401 @@
+/*COMMON STYLE  */
+@font-face{
+font-family: 'Bernier';
+src: url('fonts/bernier/BERNIERRegular-Regular.otf');
+/* url('../fonts/WebFont.woff') format('woff'),
+url('../fonts/WebFont.ttf') format('truetype'),
+url('../fonts/WebFont.svg#webfont') format('svg'); */
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'Bernier Shade';
+src: url('fonts/berniershade/BERNIERShade-Regular.otf');
+/* url('../fonts/WebFont.woff') format('woff'),
+url('../fonts/WebFont.ttf') format('truetype'),
+url('../fonts/WebFont.svg#webfont') format('svg'); */
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'Bernier Distressed';
+src: url('fonts/bernierdistressed/BERNIERDistressed-Regular.otf');
+/* url('../fonts/WebFont.woff') format('woff'),
+url('../fonts/WebFont.ttf') format('truetype'),
+url('../fonts/WebFont.svg#webfont') format('svg'); */
+font-weight: normal;
+font-style: normal;
+}
+
+
+
+:root{
+  --main-bg-color: #1E1E1E;
+  --top-header-bg-color: rgba(145, 145, 145, 0.38);
+  --font-color: #FFFFFF;
+  --element-bg-color: #FFFFFF;
+}
+body{
+  background-color: var(--main-bg-color);
+  font-family: 'Open Sans', sans-serif;
+}
+body, html{
+  width: 100%;
+  color: var(--font-color);
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+.wrapper{
+  margin: 0 auto;
+  max-width: 1140px;
+  padding: 0px 10px;
+}
+.flex-container{
+  display: flex;
+}
+.flex-inline-container{
+  display: inline-flex;
+}
+.fixed-block{
+  position: relative;
+  height: 1px;
+}
+.btn{
+  display: inline-block;
+  font-family: 'Bernier Distressed';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 12px 36px;
+  text-transform: uppercase;
+  border: 1px solid var(--element-bg-color);
+}
+.btn:hover{
+  box-shadow:
+    8px 8px 1px var(--main-bg-color),
+      9px 9px 1px var(--element-bg-color);
+}
+/* END COMMON STYLE */
+
+
+/* STYLE FOR HEADER */
+.top-header{
+  background-color: var(--top-header-bg-color);
+  padding: 5px 0px;
+}
+.top-header .flex-container{
+  justify-content: space-between;
+  align-items: center;
+}
+.address{
+  font-size: 12px;
+  line-height: 16px;
+}
+.contacts-info{
+  align-items: center;
+}
+.contact-telephone{
+  font-size: 12px;
+  line-height: 16px;
+  margin-right:  30px;
+}
+.social__links:not(:last-child){
+  margin-right: 25px;
+}
+.main-header{
+  padding-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo{
+  max-width:150px;
+  height: 87px;
+}
+.main-menu,
+.basket{
+  display: inline-block;
+}
+.main-menu{
+  font-family: 'Bernier';
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 22px;
+}
+.main-menu__item{
+  display: inline-block;
+  margin-right: 20px;
+}
+.main-menu__item:hover{
+  border-bottom: 2px #fff solid;
+}
+.basket__count-product{
+  vertical-align: center;
+  font-family: 'Bernier';
+  font-size: 18px;
+  font-size: normal;
+  margin-right: 3px;
+}
+.basket__image{
+  padding-bottom: 5px;
+}
+.hamburger{
+  width: 50px;
+  height: 50px;
+  margin-top: 50px;
+  display: none;
+}
+.hamburger__btn{
+  position: relative;
+  width: 50px;
+  height: 2px;
+  background-color: var(--element-bg-color);
+}
+.hamburger__btn::before,
+.hamburger__btn::after{
+  content:"";
+  position: absolute;
+  height: 2px;
+  background-color: var(--element-bg-color);
+}
+.hamburger__btn::before{
+  top: 11px;
+  width: 50px;
+}
+.hamburger__btn::after{
+  top: 22px;
+  left: 50%;
+  width: 25px;
+}
+.active .hamburger__btn{
+  top: 25%;
+  background-color: transparent;
+}
+.active .hamburger__btn::after,
+.active .hamburger__btn::before{
+  width: 45px;
+  top: 0px;
+  left: 0;
+  transform-origin: center;
+}
+.active .hamburger__btn::after{
+  transform: rotate(45deg);
+}
+.active .hamburger__btn::before{
+  transform: rotate(-45deg);
+}
+.block-mobile-menu{
+  display: none;
+  background-color: var(--main-bg-color);
+  margin-top: 150px
+}
+.active.block-mobile-menu{
+  display: block;
+}
+.block-mobile-menu{
+  min-width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: var(--main-bg-color);
+}
+.mobile-menu{
+  /* margin-top: 130px; */
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+.mobile-menu__item{
+  margin-bottom: 40px;
+}
+.contact-info-mobile{
+  flex-direction: column;
+}
+
+.contact-info-mobile .contact-telephone{
+  font-family: Open Sans;
+  font-weight: bold;
+  font-size: 26px;
+  margin: 20px 0px;
+}
+.contact-info-mobile .address{
+  font-family: Open Sans;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.contact-info-mobile .social{
+  margin-bottom: 100px;
+}
+.info-block{
+  margin-bottom: 120px;
+}
+.info-block-item{
+  margin-bottom: 30px;
+}
+.info-block-item__title{
+  font-family: 'Bernier Distressed';
+  text-transform: uppercase;
+  font-size: 26px;
+  line-height: 40px;
+}
+.info-block-item__text{
+  font-family: Open Sans;
+  font-size: 15px;
+}
+@media screen and (max-width: 767px){
+  .hamburger{
+    display: block;
+  }
+
+  .top-header,
+  .nav{
+    display: none;
+  }
+}
+/* END STYLE FOR HEADER */
+
+
+/* STYLE FOR INFO-BANNER */
+.info-banner{
+  width: 100%;
+  background-image: url('banner.png');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 100vh;
+  min-height: 100vh;
+  padding-top: 170px;
+}
+.info-banner__text{
+  max-width: 540px;
+  font-family: 'Bernier Shade';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 85px;
+  line-height: 120px;
+}
+.info-banner__btn{
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 787px){
+  .info-banner__text{
+    font-size: 65px;
+    line-height: 85px;
+  }
+  .info-banner__btn{
+    margin-top: 40px;
+  }
+}@media screen and (max-width: 575px){
+  .info-banner__text{
+    font-size: 45px;
+    line-height: 65px;
+  }
+  .info-banner__btn{
+    margin-top: 60px;
+  }
+}
+/* END STYLE FOR INFO-BANNER */
+
+
+/* STYLE FOR MAIN CONTENT */
+.main-content{
+  padding-top: 130px;
+}
+.preview-menu-dishes{
+  text-align: center;
+  margin-bottom: 130px;
+}
+.preview-menu-dishes-category{
+
+}
+.preview-menu-dishes-category__title{
+  font-family: 'Bernier';
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 35px;
+}
+.preview-menu-dishes-category__link{
+  display: block;
+  width: 218px;
+  height: 218px;
+  overflow: hidden;
+  margin: 0 auto 35px;
+}
+.preview-menu-dishes-category__link:hover{
+  outline: 2px solid var(--element-bg-color);
+  outline-offset: 10px;
+}
+.preview-menu-dishes-category__link:not(:last-child){
+  border-radius: 50%;
+}
+.preview-menu-dishes-category__image{
+  display: inline-block;
+  height: 218px;
+}
+.preview-menu-dishes-category__description{
+  padding: 0 10px;
+}
+.more{
+  top: 100px;
+  position: relative;
+}
+.more::after{
+  content:"menu";
+  position: absolute;
+  left: 4px;
+  top: 50px;
+  font-family: 'Bernier Shade';
+  font-size: 18px;
+  letter-spacing: 0.275em;
+  padding-bottom: 2px;
+}
+.more:hover::after{
+  border-bottom: 2px solid var(--element-bg-color);
+}
+
+.reservation .flex-container,
+.about .flex-container,
+.social .flex-container{
+  margin-bottom: 30px;
+  align-items: center;
+}
+.reservation .flex-container,
+.social .flex-container{
+  justify-content: space-between;
+}
+.about__description{
+  margin-left: 70px;
+}
+.reservation__title,
+.about__title,
+.social__title
+{
+  font-family: 'Bernier Distressed';
+  font-size: 30px;
+  line-height: 45px;
+  margin-bottom: 30px;
+}
+.social__title{
+
+}
+.reservation__text,
+.about__text{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 30px;
+  width: 340px;
+}
+
+.reservation__text{
+  width: 340px;
+}
+.about__text{
+  width: 540px;
+}
+
+/* END STYLE FOR MAIN CONTENT */
