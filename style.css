@@ -129,7 +129,8 @@ a{
   display: inline-block;
   margin-right: 20px;
 }
-.main-menu__item:hover{
+.main-menu__item:hover,
+.mobile-menu__item:hover{
   border-bottom: 2px #fff solid;
 }
 .basket__count-product{
@@ -366,9 +367,11 @@ a{
     margin-top: 20px;
   }
 }
-.reservation .flex-container,
-.about .flex-container,
-.live-music .flex-container{
+
+
+.reservation.flex-container,
+.about.flex-container,
+.live-music.flex-container{
   margin-bottom: 30px;
   align-items: center;
 }
@@ -412,35 +415,115 @@ a{
 .reservation__image img{
   width: 665px;
 }
+.live-music__image img{
+  width: 268px;
+}
 @media screen and (max-width: 1200px){
   .reservation__image img{
-    width: 400px;
+    width: 500px;
   }
-  .reservation__text{
+  .reservation__text,
+  .about__text{
     padding-right: 40px;
+  }
+  .live-music.flex-container{
+    flex-direction: column;
+  }
+  .live-music__image{
+    margin-top: 50px;
+  }
+  .live-music__image img:last-child{
+    padding-top: 40px;
+  }
+  .live-music__image img:first-child{
+    padding-bottom: 40px;
   }
 }
 @media screen and (max-width: 787px){
-  .live-music .flex-container{
-    flex-direction: column;
-    justify-content:center;
-  }
   .reservation__text,
   .about__text,
   .live-music__text{
     padding-right: 20px;
   }
 
-  .reservation .flex-container{
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content:center;
+  .reservation__image img,
+  .about__image img{
+    width: 350px;
   }
-  .reservation__image img{
+}
+
+@media screen and (max-width: 600px){
+  .reservation.flex-container,
+  .live-music.flex-container,
+  .about.flex-container{
+    margin-bottom: 80px;
+  }
+  .reservation.flex-container{
+    flex-direction: column;
+  }
+  .about.flex-container{
+    flex-direction: column-reverse;
+  }
+  .reservation__image img,
+  .about__image img{
     width: 100%;
   }
   .reservation__image{
     margin-top: 30px;
   }
+  .about__description{
+    margin-left: 0px;
+  }
+  .live-music__image img{
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .live-music__image{
+    flex-direction: column;
+  }
+
+  .live-music__image img:first-child{
+    margin-right: 0;
+  }
 }
 /* END STYLE FOR MAIN CONTENT */
+
+/* STYLE FOR ADVBLOCK */
+.advblock{
+  background: url('bg_advblock.png') center;
+  height: 535px;
+  position: relative;
+}
+.shadow{
+  position: absolute;
+  display: block;
+  top:0;
+  left: 0;
+  height: 535px;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.7);
+}
+.advblock .flex-container{
+  height: 535px;
+  max-width: 750px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.advblock__title{
+  font-family: 'Bernier Distressed';
+  font-size: 30px;
+  line-height: 45px;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+.advblock__text{
+  font-family: Open Sans;
+  font-size: 14px;
+  line-height: 22px;
+  z-index: 1;
+}
+/* END STYLE FOR ADVBLOCK */
