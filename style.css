@@ -307,9 +307,13 @@ a{
 .preview-menu-dishes{
   text-align: center;
   margin-bottom: 130px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.preview-menu-dishes-category{
-
+.preview-menu-dishes-category,
+.more{
+  display: block;
+  max-width: 250px;
 }
 .preview-menu-dishes-category__title{
   font-family: 'Bernier';
@@ -342,6 +346,7 @@ a{
 .more{
   top: 100px;
   position: relative;
+  height: 100px;
 }
 .more::after{
   content:"menu";
@@ -356,15 +361,19 @@ a{
 .more:hover::after{
   border-bottom: 2px solid var(--element-bg-color);
 }
-
+@media screen and (max-width: 1080px){
+  .preview-menu-dishes-category{
+    margin-top: 20px;
+  }
+}
 .reservation .flex-container,
 .about .flex-container,
-.social .flex-container{
+.live-music .flex-container{
   margin-bottom: 30px;
   align-items: center;
 }
 .reservation .flex-container,
-.social .flex-container{
+.live-music .flex-container{
   justify-content: space-between;
 }
 .about__description{
@@ -372,30 +381,66 @@ a{
 }
 .reservation__title,
 .about__title,
-.social__title
+.live-music__title
 {
   font-family: 'Bernier Distressed';
   font-size: 30px;
   line-height: 45px;
   margin-bottom: 30px;
 }
-.social__title{
-
-}
 .reservation__text,
-.about__text{
+.about__text,
+.live-music__text{
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: 18px;
   margin-bottom: 30px;
-  width: 340px;
+  padding-right: 140px;
 }
+.live-music__text{
+  padding-right: 80px;
+}
+.live-music__image img:first-child{
+  margin-right: 20px;
+}
+.live-music__links:not(:last-child){
+  margin-right: 10px;
+}
+ .reservation__image{
+  max-width: 100%;
+}
+.reservation__image img{
+  width: 665px;
+}
+@media screen and (max-width: 1200px){
+  .reservation__image img{
+    width: 400px;
+  }
+  .reservation__text{
+    padding-right: 40px;
+  }
+}
+@media screen and (max-width: 787px){
+  .live-music .flex-container{
+    flex-direction: column;
+    justify-content:center;
+  }
+  .reservation__text,
+  .about__text,
+  .live-music__text{
+    padding-right: 20px;
+  }
 
-.reservation__text{
-  width: 340px;
+  .reservation .flex-container{
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:center;
+  }
+  .reservation__image img{
+    width: 100%;
+  }
+  .reservation__image{
+    margin-top: 30px;
+  }
 }
-.about__text{
-  width: 540px;
-}
-
 /* END STYLE FOR MAIN CONTENT */
