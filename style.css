@@ -573,7 +573,9 @@ a{
 .contact-block .social{
   margin-top: 24px;
 }
-
+.footer-logo{
+  margin: 40px auto 40px;
+}
 @media screen and (max-width: 1023px){
   .footer .flex-container{
     flex-wrap: wrap;
@@ -589,6 +591,13 @@ a{
   }
   .info-block{
     order: -2;
+  }
+  .map{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .footer-menu__item{
+    display: inline-block;
   }
 }
 /* END STYLE FOR FOOTER */
